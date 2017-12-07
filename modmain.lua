@@ -1,3 +1,5 @@
+local CLICK_TO_WALK_ENABLED = GetModConfigData("CLICK_TO_WALK_ENABLED")
+
 local PlayerControllerPostConstruct = function(self)
   local OriginalOnLeftClick = self.OnLeftClick
   local BufferedAction = GLOBAL.BufferedAction
@@ -14,4 +16,6 @@ local PlayerControllerPostConstruct = function(self)
   end
 end
 
-AddClassPostConstruct('components/playercontroller', PlayerControllerPostConstruct)
+if not CLICK_TO_WALK_ENABLED then
+  AddClassPostConstruct('components/playercontroller', PlayerControllerPostConstruct)
+end

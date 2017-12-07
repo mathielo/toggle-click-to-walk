@@ -34,3 +34,17 @@ icon_atlas = ""
 icon = ""
 
 forumthread = ""
+
+configuration_options =
+{
+  {
+    name = "CLICK_TO_WALK_ENABLED",
+    label = "Click to Walk",
+    hover = "Should your char move (walk) when you click on the ground?",
+    options = {
+      {description = "Yes", data = true},
+      {description = "No", data = false},
+    },
+    default = false,
+  },
+}
