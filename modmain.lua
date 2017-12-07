@@ -1,14 +1,16 @@
 local CLICK_TO_WALK_ENABLED = GetModConfigData("CLICK_TO_WALK_ENABLED")
+local CTW_TOGGLE_SHORTCUTKEY = GetModConfigData("CTW_TOGGLE_SHORTCUTKEY")
+
+local ACTIONS = GLOBAL.ACTIONS
+local BufferedAction = GLOBAL.BufferedAction
+local TheInput = GLOBAL.TheInput
 
 local PlayerControllerPostConstruct = function(self)
   local OriginalOnLeftClick = self.OnLeftClick
-  local BufferedAction = GLOBAL.BufferedAction
-  local ACTIONS = GLOBAL.ACTIONS
-  local TheInput = GLOBAL.TheInput
 
   self.OnLeftClick = function(down)
     local act = self:GetLeftMouseAction() or BufferedAction(self.inst, nil, ACTIONS.WALKTO, nil, TheInput:GetWorldPosition())
-    if act.action == ACTIONS.WALKTO and act.target == nil and TheInput:GetWorldEntityUnderMouse() == nil then
+    if not CLICK_TO_WALK_ENABLED and act.action == ACTIONS.WALKTO and act.target == nil and TheInput:GetWorldEntityUnderMouse() == nil then
       return
     end
 
@@ -16,6 +18,11 @@ local PlayerControllerPostConstruct = function(self)
   end
 end
 
-if not CLICK_TO_WALK_ENABLED then
-  AddClassPostConstruct('components/playercontroller', PlayerControllerPostConstruct)
+if type(CTW_TOGGLE_SHORTCUTKEY) == "string" then
+  local key = CTW_TOGGLE_SHORTCUTKEY:lower():byte()
+  TheInput:AddKeyUpHandler(key, function()
+    CLICK_TO_WALK_ENABLED = not CLICK_TO_WALK_ENABLED
+  end)
 end
+
+AddClassPostConstruct('components/playercontroller', PlayerControllerPostConstruct)

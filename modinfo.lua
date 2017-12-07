@@ -47,4 +47,18 @@ configuration_options =
     },
     default = false,
   },
+  {
+    name = "CTW_TOGGLE_SHORTCUTKEY",
+    label = "Toggle Key",
+    hover = "Press this key to toggle on/off",
+    options = {
+      {description = "K", data = "K"},
+      {description = "L", data = "L"},
+      {description = ";", data = ";"},
+      {description = "[", data = "["},
+      {description = "]", data = "]"},
+      {description = "Disabled", data = false},
+    },
+    default = "K",
+  },
 }
