@@ -1,4 +1,4 @@
-#Toggle Click to Walk - Don't Starve Together
+# Toggle Click to Walk - Don't Starve Together
 
 Grants the player the ability to toggle between enable / disable click to walk functionality in-game. 
 
