@@ -33,7 +33,7 @@ server_filter_tags = {}
 icon_atlas = "toggle-c2w.tex"
 icon = "toggle-c2w.tex"
 
-forumthread = ""
+forumthread = "/files/file/1788-toggle-click-to-walk/"
 
 configuration_options =
 {
