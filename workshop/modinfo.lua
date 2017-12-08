@@ -30,8 +30,8 @@ client_only_mod = true
 --This lets people search for servers with this mod by these tags
 server_filter_tags = {}
 
-icon_atlas = "toggle-c2w.tex"
-icon = "toggle-c2w.tex"
+icon_atlas = ""
+icon = ""
 
 forumthread = "/files/file/1788-toggle-click-to-walk/"
 

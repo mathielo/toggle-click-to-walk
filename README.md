@@ -5,6 +5,9 @@ Grants the player the ability to toggle between enable / disable click to walk f
 Disabling the click to move will ONLY affect clicks “on the ground” - e.g. when you’re not targeting any entities. You can still click to perform any actions such as mining, picking, attacking, examining, etc. 
 
 # Options
+
+![Mod Config Panel](./screenshots/mod-config.png)
+
 ## Click to Walk
 
  Tells whether click to walk will be working or not by default when joining a game . Available options:
