@@ -24,9 +24,7 @@ You can chose to disable the ability to toggle if you like.
 
 # Version Support
 
-Currently only **Don't Starve Together** is supported.
-
-Support for Don't Starve / Reign of Giants / Shipwrecked coming soon.
+**ALL** versions of Don't Starve (RoG, SW) and Don't Starve Together are supported :yum:
 
 # Motivation
 
@@ -36,6 +34,8 @@ Hope this mod can help improving your gameplay experience. As always any feedbac
 
 # Links
 
-* [Steam Workshop](http://steamcommunity.com/sharedfiles/filedetails/?id=1225360454)
+* Steam Workshop
+    * [Don't Starve](http://steamcommunity.com/sharedfiles/filedetails/?id=1226858979)
+    * [Don't Starve Together](http://steamcommunity.com/sharedfiles/filedetails/?id=1225360454)
 * [Klei Forums Mod File](https://forums.kleientertainment.com/files/file/1788-toggle-click-to-walk/)
 * [The Forge request thread](https://forums.kleientertainment.com/topic/84909-how-to-disable-click-to-walk/)
