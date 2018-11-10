@@ -10,7 +10,7 @@ local PlayerControllerPostConstruct = function(self)
 
   self.OnLeftClick = function(self, down)
     -- Only intercept if "down" and also if nothing is being placed
-    if down and (self.placer_recipe == nil or self.placer == nil) then
+    if down and (self.placer_recipe == nil or self.placer == nil) and not self:IsAOETargeting() then
       local act = self:GetLeftMouseAction() or BufferedAction(self.inst, nil, ACTIONS.WALKTO, nil, TheInput:GetWorldPosition())
       local mouseEntity = TheInput:GetWorldEntityUnderMouse()
       local mousePointsAtPlayerOrNil = mouseEntity == nil or mouseEntity == self.inst
