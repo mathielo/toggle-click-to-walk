@@ -9,8 +9,15 @@ local PlayerControllerPostConstruct = function(self)
   local OriginalOnLeftClick = self.OnLeftClick
 
   self.OnLeftClick = function(self, down)
+    -- IsAOETargeting was implemented for The Forge and is only available in DST.
+    -- Check if the method exists before calling if to add DS compatibility
+    local LocalIsAOET = false
+    if self.IsAOETargeting then
+      LocalIsAOET = self:IsAOETargeting()
+    end
+
     -- Only intercept if "down" and also if nothing is being placed
-    if down and (self.placer_recipe == nil or self.placer == nil) and not self:IsAOETargeting() then
+    if down and (self.placer_recipe == nil or self.placer == nil) and not LocalIsAOET then
       local act = self:GetLeftMouseAction() or BufferedAction(self.inst, nil, ACTIONS.WALKTO, nil, TheInput:GetWorldPosition())
       local mouseEntity = TheInput:GetWorldEntityUnderMouse()
       local mousePointsAtPlayerOrNil = mouseEntity == nil or mouseEntity == self.inst
